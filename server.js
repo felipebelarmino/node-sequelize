@@ -17,7 +17,7 @@ app.use(cors(corsOptions));
 db.sequelize.sync();
 
 app.get('/', (req, res) => {
-  res.json({message: 'Say hello to my little friend'})
+  res.json({message: 'Say hello to my little friend.'})
 });
 
 const PORT = process.env.PORT || 8080;
