@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('./models');
 const cors = require('cors');
 const app = express();
 
@@ -11,8 +12,9 @@ const corsOptions = {
   origin: 'https://localhost:8081'
 };
 
-
 app.use(cors(corsOptions));
+
+db.sequelize.sync();
 
 app.get('/', (req, res) => {
   res.json({message: 'Say hello to my little friend'})
