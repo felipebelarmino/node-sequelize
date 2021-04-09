@@ -17,8 +17,12 @@ const sequelize = new Sequelize(
 });
 
 const db = {};
-db.sequelize = Sequelize;
+
+db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-db.tutorial = require('./tutorial.model')(sequelize, Sequelize);
+
+db.userModel = require('./userModel')(sequelize, Sequelize);
+db.produtoModel = require('./produto')(sequelize, Sequelize);
+db.lojaModel = require('./loja')(sequelize, Sequelize);
 
 module.exports = db;
