@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('./models');
 const cors = require('cors');
 const app = express();
-const userModel = require('./models/userModel');
+const userModel = require('./models/admin');
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -17,13 +17,17 @@ app.use(cors(corsOptions));
 
 db.sequelize.sync();
 
-app.get('/', (req, res) => {
-  res.json({message: 'Say hello to my little friend.'})
+app.get('/', async (req, res) => {
+  const data = await db.sequelize.json();
+  console.log(data);
+  res.json({message: 'Say hello to my little friend.'});
 });
 
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, () => {
+app.listen(PORT, async (req, res) => {
+  const data = await db.sequelize.json();
+  console.log(data);
   console.log(`Server funcionando na porta ${PORT}`);
 });
 

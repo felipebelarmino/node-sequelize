@@ -1,11 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
   const Loja = sequelize.define("tbl_loja", {
     Name: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(40),
       allowNull: false,
     },
     Filial: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(40),
       allowNull: false,
     },
     Description: {
@@ -20,7 +20,7 @@ module.exports = (sequelize, Sequelize) => {
     }   
   });
   Loja.associate = (models) => {
-    Loja.belongsTo(models.produto, { foreignKey: 'produtoId', as: 'tbl_produtos' });
+    Loja.belongsToMany(models.produto, { foreignKey: 'produtoId', as: 'tbl_produtos' });
     return Loja;
   }
   return Loja;
