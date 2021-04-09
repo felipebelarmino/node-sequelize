@@ -15,6 +15,7 @@ const sequelize = new Sequelize(
     idle: dbConfig.development.pool.idle,
   }
 });
+
 const db = {};
 
 db.Sequelize = Sequelize;
@@ -23,6 +24,6 @@ db.sequelize = sequelize;
 db.adminModel = require('./admin')(sequelize, Sequelize);
 db.produtoModel = require('./produto')(sequelize, Sequelize);
 db.lojaModel = require('./loja')(sequelize, Sequelize);
-db.adminLoja = require('./adminLoja')(sequelize, Sequelize);
+db.adminLojaModel = require('./adminLoja')(sequelize, Sequelize);
 
 module.exports = db;

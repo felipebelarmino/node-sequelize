@@ -6,10 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "Felipe Gomes Belarmino",
   "license": "ISC",
   "keywords": [],
-  "description": "",
+  "description": "Api gravação de dados sequelize + node + mysql2",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
