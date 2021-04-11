@@ -20,13 +20,13 @@ app.use(
 
 require("./routes/index")(app);
 
-db.sequelize.sync({ force: true }); // Força recriar as tabelas { force: true }
+db.sequelize.sync(); // Força recriar as tabelas { force: true }
 
 app.get("/", (req, res) => {
   res.json({ message: "Say hello to my little friend." });
 });
 
-const PORT = 8080 || 3306;
+const PORT = 3306;
 
 app.listen(PORT, async () => {
   const data = await db.sequelize.json();
