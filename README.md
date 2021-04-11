@@ -7,7 +7,7 @@
 - https://rest-api-pi.herokuapp.com/usuario/active
 - https://rest-api-pi.herokuapp.com/usuario/id
 
-##### Metodos
+##### Métodos
 - GET
 - POST
 - PUT
