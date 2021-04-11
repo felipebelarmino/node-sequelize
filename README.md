@@ -1,7 +1,11 @@
+### https://rest-api-pi.herokuapp.com
+
+- Deploy da API na nuvem + ClearDB MySQL no Heroku
+
 #### Rotas
-- http://localhost:8080/usuario/all
-- http://localhost:8080/usuario/active
-- http://localhost:8080/usuario/id
+- https://rest-api-pi.herokuapp.com/usuario/all
+- https://rest-api-pi.herokuapp.com/usuario/active
+- https://rest-api-pi.herokuapp.com/usuario/id
 
 ##### Metodos
 - GET
