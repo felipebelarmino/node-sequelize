@@ -1,14 +1,14 @@
 const express = require("express");
 const db = require("./models");
-const cors = require("cors");
+// const cors = require("cors");
 
 const app = express();
 
-const corsOptions = {
-  origin: "https://localhost:8081",
-};
+// const corsOptions = {
+//   origin: "https://localhost:8081",
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(express.json());
 
@@ -20,7 +20,7 @@ app.use(
 
 require("./routes/index")(app);
 
-db.sequelize.sync(); // Força recriar as tabelas 
+db.sequelize.sync({ force: true }); // Força recriar as tabelas 
 
 app.get("/", (req, res) => {
   res.json({ message: "Say hello to my little friend." });
@@ -33,4 +33,3 @@ app.listen(PORT, async () => {
   console.log(data);
   console.log(`Server funcionando na porta ${PORT}`);
 });
-F
