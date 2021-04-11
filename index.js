@@ -8,7 +8,7 @@ const app = express();
 //   origin: "https://localhost:8081",
 // };
 
-// app.use(cors(corsOptions));
+app.use(no-cors);
 
 app.use(express.json());
 
