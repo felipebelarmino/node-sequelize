@@ -20,7 +20,7 @@ app.use(
 
 require("./routes/index")(app);
 
-db.sequelize.sync({ force: true });
+db.sequelize.sync(); // Força recriar as tabelas { force: true }
 
 app.get("/", (req, res) => {
   res.json({ message: "Say hello to my little friend." });
@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, async (req, res) => {
+app.listen(PORT, async () => {
   const data = await db.sequelize.json();
   console.log(data);
   console.log(`Server funcionando na porta ${PORT}`);
