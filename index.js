@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: "https://rest-api-pi.herokuapp.com:3306",
+  origin: "https://localhost:8081",
 };
 
 app.use(cors(corsOptions));
@@ -20,13 +20,13 @@ app.use(
 
 require("./routes/index")(app);
 
-db.sequelize.sync(); // Força recriar as tabelas { force: true }
+db.sequelize.sync(); // Força recriar as tabelas 
 
 app.get("/", (req, res) => {
   res.json({ message: "Say hello to my little friend." });
 });
 
-const PORT = 3306;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, async () => {
   const data = await db.sequelize.json();
