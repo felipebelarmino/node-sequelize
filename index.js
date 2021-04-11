@@ -8,7 +8,7 @@ const app = express();
 //   origin: "https://localhost:8081",
 // };
 
-app.use(no-cors);
+// app.use(cors);
 
 app.use(express.json());
 
@@ -20,7 +20,7 @@ app.use(
 
 require("./routes/index")(app);
 
-db.sequelize.sync({ force: true }); // Força recriar as tabelas 
+db.sequelize.sync(); // Força recriar as tabelas { force: true }
 
 app.get("/", (req, res) => {
   res.json({ message: "Say hello to my little friend." });
