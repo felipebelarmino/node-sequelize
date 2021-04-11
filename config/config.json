@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "@D14m09#**651205",
-    "database": "db_nossa_loja",
-    "host": "127.0.0.1",
+    "username": "bfad283895f6e7",
+    "password": "57adb291",
+    "database": "heroku_63eddba85fed895",
+    "host": "us-cdbr-east-03.cleardb.com",
     "dialect": "mysql",
     "pool": {   
       "max": 5,
@@ -13,10 +13,10 @@
     }
   },
   "test": {
-    "username": "root",
-    "password": "@D14m09#**651205",
-    "database": "db_nossa_loja",
-    "host": "127.0.0.1",
+    "username": "bfad283895f6e7",
+    "password": "57adb291",
+    "database": "heroku_63eddba85fed895",
+    "host": "us-cdbr-east-03.cleardb.com",
     "dialect": "mysql",
     "pool": {   
       "max": 5,
@@ -26,10 +26,10 @@
     }
   },
   "production": {
-    "username": "root",
-    "password": "@D14m09#**651205",
-    "database": "db_nossa_loja",
-    "host": "127.0.0.1",
+    "username": "bfad283895f6e7",
+    "password": "57adb291",
+    "database": "heroku_63eddba85fed895",
+    "host": "us-cdbr-east-03.cleardb.com",
     "dialect": "mysql",
     "pool": {   
       "max": 5,
