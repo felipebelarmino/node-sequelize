@@ -1,6 +1,5 @@
 const db = require("../models"); // models path depend on your structure
 const admin = db.adminModel;
-const { v4: uuidV4 } = require("uuid");
 
 exports.create = (req, res) => {
   // Valida request
@@ -13,7 +12,6 @@ exports.create = (req, res) => {
 
   // Cria um objeto usuario com os dados passados no req.body
   const usuario = {
-    id: uuidV4(),
     Login: req.body.Login,
     Password: req.body.Password,
     Active: req.body.Active ? req.body.Active : false,
@@ -161,13 +159,25 @@ exports.findAllAdmins = (req, res) => {
 //------------------------------
 //Busca Admin pelo Login e Senha
 exports.findByLogin = (req, res) => {
-
-  const allUsers = admin.findAll({
+  admin.findAll({
     where: null,
-  });
+  })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving admins.",
+      });
+    });
 
-  const { Login, Password } = req.body;
+  // const allUsers = await dbadmin.findAll({
+  //   where: null,
+  // });
 
-  const response = { Login, Password, allUsers };
-  return res.json(response);
+  // const { Login, Password } = req.body;
+
+  // const response = { Login, Password, allUsers };
+  // return res.json(response);
 }
