@@ -168,7 +168,7 @@ exports.findByLogin = (req, res) => {
       data.some(user => user.Login === Login);
     })
     .then((data) => {
-      res.send({ message: "Ok"});
+      res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
