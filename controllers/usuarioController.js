@@ -161,8 +161,11 @@ exports.findAllAdmins = (req, res) => {
 exports.findByLogin = async (req, res) => {
   const { Login } = req.body;
 
-  const response = await admin.findAll({ where: null, })
-  return res.json(response)
+  const users = await admin.findAll({ where: null, });
+
+  const response = users.map((user) => user.Login === Login);
+
+  return res.json(response);
 
   // const allUsers = await dbadmin.findAll({
   //   where: null,
