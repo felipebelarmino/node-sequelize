@@ -168,7 +168,7 @@ exports.findByLogin = (req, res) => {
       data.some(user => user.Login === Login);
     })
     .then((data) => {
-      res.json(data);
+      res.send({ message: data});
     })
 
   // const allUsers = await dbadmin.findAll({
