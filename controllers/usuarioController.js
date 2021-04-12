@@ -1,5 +1,6 @@
 const db = require("../models"); // models path depend on your structure
 const admin = db.adminModel;
+const { v4: uuidV4 } = require("uuid");
 
 exports.create = (req, res) => {
   // Valida request
@@ -12,6 +13,7 @@ exports.create = (req, res) => {
 
   // Cria um objeto usuario com os dados passados no req.body
   const usuario = {
+    id: uuidV4(),
     Login: req.body.Login,
     Password: req.body.Password,
     Active: req.body.Active ? req.body.Active : false,
