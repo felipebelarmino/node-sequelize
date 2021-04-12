@@ -159,11 +159,16 @@ exports.findAllAdmins = (req, res) => {
 //------------------------------
 //Busca Admin pelo Login e Senha
 exports.findByLogin = (req, res) => {
+  const { Login } = req.body;
+
   admin.findAll({
     where: null,
   })
     .then((data) => {
-      res.send(data);
+      data.some(user => user.Login === Login);
+    })
+    .then((data) => {
+      res.send({ message: "Ok"});
     })
     .catch((err) => {
       res.status(500).send({
