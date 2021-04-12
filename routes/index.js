@@ -1,7 +1,7 @@
 module.exports = (app) => {
   const usuario = require("../controllers/usuarioController");
   let router = require("express").Router();
-  
+
   // Rotas POST
   router.post("/", usuario.create);
 
