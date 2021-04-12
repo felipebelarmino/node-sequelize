@@ -1,5 +1,3 @@
-// 'use strict';
-// const { Model } = require('sequelize');
 module.exports = (sequelize, Sequelize) => {
   const Admin = sequelize.define("tbl_admin", {
     Login: {
