@@ -4,6 +4,7 @@ module.exports = (app) => {
 
   // Rotas POST
   router.post("/", usuario.create);
+  router.post("/login/:login", usuario.findByLogin);
 
   //Rotas GET
   router.get("/active", usuario.findAllActive);

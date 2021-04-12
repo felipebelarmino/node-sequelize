@@ -158,3 +158,12 @@ exports.findAllAdmins = (req, res) => {
       });
     });
 };
+//------------------------------
+//Busca Admin pelo Login e Senha
+exports.findByLogin = (req, res) => {
+  const allUsers = admin.findAllAdmins(req, res);
+  const { Login, Password } = req.body;
+
+  const response = { Login, Password, ...allUsers };
+  return res.json(response);
+}
