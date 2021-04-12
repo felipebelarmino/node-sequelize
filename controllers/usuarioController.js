@@ -163,7 +163,7 @@ exports.findByLogin = async (req, res) => {
 
   const users = await admin.findAll({ where: null, });
 
-  const response = users.find(user => user.Login === Login && user.Password === Password);
+  const response = users.some(user => user.Login === Login && user.Password === Password);
 
   return res.json(response);
 
