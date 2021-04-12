@@ -1,3 +1,5 @@
+// 'use strict';
+// const { Model } = require('sequelize');
 module.exports = (sequelize, Sequelize) => {
   const Admin = sequelize.define("tbl_admin", {
     Login: {
@@ -12,6 +14,6 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.BOOLEAN,
       allowNull: false,
     }
-  });
+  }, {});
   return Admin;
 };
