@@ -159,11 +159,11 @@ exports.findAllAdmins = (req, res) => {
 //------------------------------
 //Busca Admin pelo Login e Senha
 exports.findByLogin = async (req, res) => {
-  const { Login } = req.body;
+  const { Login, Password } = req.body;
 
   const users = await admin.findAll({ where: null, });
 
-  const response = users.map((user) => user.Login === Login);
+  const response = users.find(user => user.Login === Login && user.Password === Password);
 
   return res.json(response);
 
