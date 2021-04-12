@@ -168,14 +168,8 @@ exports.findByLogin = (req, res) => {
       data.some(user => user.Login === Login);
     })
     .then((data) => {
-      res.send(data);
+      res.json(data);
     })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving admins.",
-      });
-    });
 
   // const allUsers = await dbadmin.findAll({
   //   where: null,
