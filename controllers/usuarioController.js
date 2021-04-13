@@ -166,13 +166,4 @@ exports.findByLogin = async (req, res) => {
   const response = users.some(user => user.Login === Login && user.Password === Password);
 
   return res.json(response);
-
-  // const allUsers = await dbadmin.findAll({
-  //   where: null,
-  // });
-
-  // const { Login, Password } = req.body;
-
-  // const response = { Login, Password, allUsers };
-  // return res.json(response);
 }
